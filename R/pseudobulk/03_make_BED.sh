@@ -19,7 +19,7 @@ for chr in $(seq 1 22);do
       awk '{ $1 = substr($1, 1, 15)} 1' |
       sort -k 1b,1 > tmp02
 
-      outfile="/path/chr${chr}_input.txt"
+      outfile="/path/chr${chr}_input.bed"
       # Link ENSG to gene name using features.tsv.gz file from cellranger-3.1.0, GRCh38
       zcat /path/features.tsv.gz |
       grep ^ENSG |
