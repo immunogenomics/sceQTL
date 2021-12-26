@@ -10,7 +10,7 @@ gene <- args[1]
 snp <- args[2]
 
 # Load normalized UMI counts matrix and metadata (from GEO: GSE158769) and gene expression PCs
-exprs_raw <- fread("/path/GSE158769_exprs_norm.tsv.gz")
+exprs_norm <- fread("/path/GSE158769_exprs_norm.tsv.gz")
 meta <- fread("/path/GSE158769_meta_data.txt.gz")
 pca_res <- readRDS("/path/pca_irlba.rds")
 pca_res <- pca_res$x
@@ -22,7 +22,7 @@ row.names(pcs) <- pcs$V2
 pcs <- pcs[,3:ncol(pcs)]
 
 # Make data frame of variables for model
-E <- as.numeric(exprs_raw[gene,]) 
+E <- as.numeric(exprs_norm[gene,]) 
 G <- t(subset(geno, ID == snp)[,as.character(meta$donor)])[,1]
 IND <- factor(meta$donor)
 B <- meta$batch
