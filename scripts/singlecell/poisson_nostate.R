@@ -1,4 +1,4 @@
-# Script to run single-cell Poisson eQTL model without cell state interaction
+# Script to run single-cell Poisson mixed effects eQTL model without cell state interaction
 
 # Load libraries
 library(lme4)
