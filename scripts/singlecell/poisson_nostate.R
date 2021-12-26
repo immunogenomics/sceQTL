@@ -42,7 +42,7 @@ full_model <- lme4::glmer(formula = E ~ G + (1 | IND) + (1 | B) + AGE + SEX + nU
                           family = "poisson", nAGQ=0, data= data, control = glmerControl(optimizer = "nloptwrap"))
 null_model <- lme4::glmer(formula = E ~ (1 | IND) + (1 | B) + AGE + SEX + nUMI + MT + PC1 + PC2 + PC3 + PC4 + PC5 + expPC1 + expPC2 + expPC3 + expPC4 + expPC5, 
                           family = "poisson", nAGQ=0, data= data, control = glmerControl(optimizer = "nloptwrap"))
-model_lrt <- anova(test_null, test)
+model_lrt <- anova(null_model, full_model)
 
 out <- summary(test)$coefficients
 colnames(out) <- c("Estimate","Std.Error","zvalue","pval")
