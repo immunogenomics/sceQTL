@@ -42,7 +42,7 @@ full_model <- lme4::lmer(formula = E ~ G + (1 | IND) + (1 | B) + AGE + SEX + nUM
                           data= data, REML = F)
 null_model <- lme4::lmer(formula = E ~ (1 | IND) + (1 | B) + AGE + SEX + nUMI + MT + PC1 + PC2 + PC3 + PC4 + PC5 + expPC1 + expPC2 + expPC3 + expPC4 + expPC5, 
                           data= data, REML = F)
-model_lrt <- anova(test_null, test)
+model_lrt <- anova(null_model, full_model)
 
 out <- summary(test)$coefficients
 colnames(out) <- c("Estimate","Std.Error","tvalue")
