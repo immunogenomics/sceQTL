@@ -1,4 +1,4 @@
-# Script to run single-cell Poisson mixed effects eQTL model with one cell state interaction (e.g., CV, PC, CD4+, trajectory, disease status)
+# Script to run single-cell Poisson mixed effects eQTL model with one cell state interaction (e.g., CV, PC, CD4+, trajectory, disease status) on permuted data (permuting cell state)
 
 # Load libraries
 library(lme4)
