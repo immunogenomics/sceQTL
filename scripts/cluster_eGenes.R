@@ -15,14 +15,14 @@ sceqtl_results <- readRDS("/path/sceqtl_results.rds")
 
 # Extract genotype betas, and interaction betas and p values for 7 eQTL interaction terms per eGene
 
-g_mat <- cvall %>% filter(term == "G") %>% select(gene, Estimate)
+g_mat <- sceqtl_results %>% filter(term == "G") %>% select(gene, Estimate)
 row.names(g_mat) <- g_mat$gene
 
 beta_mat <- sceqtl_results %>% filter(grepl("G:CV", term)) %>% select(gene, term, Estimate) %>% spread(term, Estimate)
 row.names(beta_mat) <- beta_mat$gene
 beta_mat <- beta_mat[,-1]
 
-p_mat <- cvall %>% filter(grepl("G:CV", term)) %>% select(gene, term, pval) %>% spread(term, pval)
+p_mat <- sceqtl_results %>% filter(grepl("G:CV", term)) %>% select(gene, term, pval) %>% spread(term, pval)
 row.names(p_mat) <- p_mat$gene
 p_mat <- p_mat[,-1]
 
