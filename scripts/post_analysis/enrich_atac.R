@@ -1,4 +1,4 @@
-# Script to calculate enrichment of eQTL signal in transcription start sites
+# Script to calculate enrichment of eQTL signal in ATAC-seq peaks from sorted T cell types in Calderon, et al. (2019)Nat Genetics
 
 # Load libraries
 library(data.table)
