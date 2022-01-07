@@ -1,4 +1,4 @@
-# Script to calculate enrichment of eQTL signal in transcription start sites
+# Script to calculate enrichment of eQTL signal in T cell-specific regulatory regions defined by IMPACT (Amariuta, et al. [2019] AJHG)
 
 # Load libraries
 library(data.table)
