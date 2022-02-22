@@ -1,3 +1,5 @@
+# Script to merge PEER residuals from pseudobulk memory T cells and Blueprint bulk T cells
+
 library(data.table)
 library(stringr)
 library(readr)

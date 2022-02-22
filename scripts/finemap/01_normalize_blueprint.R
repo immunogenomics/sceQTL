@@ -1,3 +1,5 @@
+# Script to process Blueprint data similarly to pseudobulk memory T cell data by PEER normalizing and regressing out covariates
+
 library(data.table)
 library(readr)
 library(stringr)

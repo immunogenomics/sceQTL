@@ -8,8 +8,6 @@ library(singlecellmethods)
 library(dplyr)
 library(harmony)
 library(uwot)
-library(DDRTree)
-library(princurve)
 
 # Load data
 ge_counts <- readRDS('/path/randolph_raw.rds') # 19248 236993 (genes x cells)
