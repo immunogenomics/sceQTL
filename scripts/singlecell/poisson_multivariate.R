@@ -51,4 +51,4 @@ model_lrt <- anova(null_model, full_model)
 
 out <- summary(test)$coefficients
 colnames(out) <- c("Estimate","Std.Error","zvalue","pval")
-out <- data.frame(gene=gene,snp=snp,term=row.names(x),x, lrt_pval=model_lrt$`Pr(>Chisq)`[2])
+out <- data.frame(gene=gene,snp=snp,term=row.names(out),out, lrt_pval=model_lrt$`Pr(>Chisq)`[2])
